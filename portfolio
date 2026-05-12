@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Portfolio | Creative King – Luxury Projects Ikeja Lagos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background-color: #0A0A0A; color: #EAEAEA; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+    :root { --gold: #D4AF37; --gold-dark: #B8902C; --charcoal: #1A1A1A; }
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; letter-spacing: -0.02em; }
+    h1 { font-size: 4rem; line-height: 1.1; }
+    h2 { font-size: 2.8rem; margin-bottom: 1rem; }
+    @media (max-width: 768px) { h1 { font-size: 2.5rem; } h2 { font-size: 2rem; } }
+    .gold-text { color: var(--gold); }
+    .btn { display: inline-block; padding: 0.9rem 2rem; border-radius: 40px; font-weight: 600; text-decoration: none; transition: 0.3s; font-size: 1rem; border: none; cursor: pointer; }
+    .btn-primary { background: var(--gold); color: #0A0A0A; }
+    .btn-outline { background: transparent; border: 1.5px solid var(--gold); color: white; }
+    .btn-small { padding: 0.5rem 1.2rem; font-size: 0.85rem; }
+    
+    /* Navigation */
+    nav { position: absolute; top: 0; width: 100%; z-index: 100; padding: 1.5rem 2rem; background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent); }
+    .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo-img { height: 50px; width: auto; object-fit: contain; }
+    .logo-text h2 { font-size: 1.6rem; color: white; margin: 0; line-height: 1; }
+    .logo-text p { font-size: 0.7rem; letter-spacing: 2px; color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: white; text-decoration: none; font-weight: 500; transition: 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    
+    /* Hamburger menu button (hidden on desktop) */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--gold);
+      cursor: pointer;
+      z-index: 101;
+    }
+    
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+        z-index: 100;
+        padding: 2rem;
+      }
+      .nav-links.show {
+        right: 0;
+      }
+      .nav-links a {
+        font-size: 1.2rem;
+      }
+      nav {
+        padding: 1rem;
+      }
+      body.menu-open {
+        overflow: hidden;
+      }
+    }
+    
+    .page-header { height: 55vh; min-height: 380px; background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('https://i.pinimg.com/736x/a7/d0/6c/a7d06c4ef7f4e2f38f756b2f89befea3.jpg?auto=compress&cs=tinysrgb&w=1600'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .portfolio-section { padding: 5rem 2rem; max-width: 1400px; margin: 0 auto; }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .portfolio-card { background: var(--charcoal); border-radius: 24px; overflow: hidden; transition: 0.4s; border: 1px solid rgba(212,175,55,0.2); }
+    .portfolio-card:hover { transform: translateY(-8px); border-color: var(--gold); }
+    .portfolio-card img { width: 100%; height: 260px; object-fit: cover; transition: 0.5s; }
+    .portfolio-card:hover img { transform: scale(1.03); }
+    .portfolio-info { padding: 1.5rem; }
+    .portfolio-location { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 5px; }
+    .portfolio-details { font-size: 0.9rem; color: #bbb; margin-top: 0.75rem; border-top: 1px solid rgba(212,175,55,0.2); padding-top: 0.75rem; }
+    .cta-banner { text-align: center; padding: 4rem 2rem; background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-attachment: fixed; }
+    footer { background: #000; padding: 3rem 2rem 1.5rem; border-top: 1px solid rgba(212,175,55,0.2); }
+    .footer-grid { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+    .footer-col h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-bottom: 1rem; color: var(--gold); }
+    .footer-col p, .footer-col a { color: #aaa; text-decoration: none; line-height: 1.6; }
+    .footer-col a:hover { color: var(--gold); }
+    .social-links a { margin-right: 1rem; font-size: 1.4rem; }
+    .copyright { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(212,175,55,0.2); font-size: 0.8rem; color: #777; }
+    .copyright a { color: var(--gold); }
+    .whatsapp-float { position: fixed; bottom: 2rem; right: 2rem; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; box-shadow: 0 5px 20px rgba(0,0,0,0.3); z-index: 99; transition: 0.2s; }
+    .whatsapp-float:hover { transform: scale(1.08); }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="images/logo.png" alt="Creative King Logo" class="logo-img">
+      <div class="logo-text">
+        <h2>CREATIVE KING</h2>
+        <p>FABRICATION</p>
+      </div>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about">About</a>
+      <a href="services">Services</a>
+      <a href="portfolio" class="active">Portfolio</a>
+      <a href="reviews">Reviews</a>
+      <a href="contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-header" data-aos="fade-up">
+  <div>
+    <h1>Our <span class="gold-text">Portfolio</span></h1>
+    <p class="gold-text" style="font-size: 1.2rem;">Real projects. Real homes. Real budgets.</p>
+  </div>
+</section>
+
+<section class="portfolio-section">
+  <div id="portfolioGrid" class="portfolio-grid">
+    <div class="loading-spinner"><i class="fas fa-spinner fa-pulse"></i> Loading projects...</div>
+  </div>
+</section>
+
+<section class="cta-banner" data-aos="fade-up">
+  <h2>Have a project in mind? <span class="gold-text">Let’s create yours.</span></h2>
+  <p style="margin-bottom: 1.5rem;">Send us a photo of your space for a rough estimate.</p>
+  <a href="https://wa.me/2347064098755" class="btn btn-primary"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Creative King</h4>
+      <p>Luxury staircase design & metal fabrication. Head office in <strong> Lagos</strong>.</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/creativekings.ng"><i class="fab fa-instagram"></i></a>
+        <a href="https://web.facebook.com/people/Creative-King-Fabrication/61584915017676/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.tiktok.com/@creative_kings_"><i class="fab fa-tiktok"></i></a>
+        <a href="https://x.com/creativekinghq" class="x-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M18.244 2H21.5l-7.19 8.21L22 22h-6.828l-5.35-7.007L3.5 22H.244l7.68-8.77L2 2h6.828l4.83 6.35L18.244 2zm-2.396 18h1.885L7.21 4H5.23l10.618 16z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <p><a href="index.html">Home</a></p>
+      <p><a href="about">About</a></p>
+      <p><a href="services">Services</a></p>
+      <p><a href="portfolio">Portfolio</a></p>
+      <p><a href="reviews">Reviews</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p><i class="fas fa-phone"></i> +234 706 409 8755</p>
+      <p><i class="fas fa-envelope"></i> enquirycreativeking@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> 20 Araromi St, off Akinremi St, Ikeja, Lagos</p>
+    </div>
+    <div class="footer-col">
+      <h4>Office Hours</h4>
+      <p>Mon – Fri: 8am – 6pm</p>
+      <p>Sat: 10am – 3pm</p>
+      <p>Sun: Closed (emergency only)</p>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>© 2025 Creative King | Built by <a href="#" target="_blank">Kreation Digitals</a></p>
+  </div>
+</footer>
+
+<a href="https://wa.me/2347064098755?text=Hi,%20I%20saw%20your%20portfolio%20–%20I%27m%20interested." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+  
+  const firebaseConfig = {
+    apiKey: "AIzaSyCyoXP3b2UvK0ONcboDg6213tesUS4peVc",
+    authDomain: "creativeking-2ac01.firebaseapp.com",
+    databaseURL: "https://creativeking-2ac01-default-rtdb.firebaseio.com",
+    projectId: "creativeking-2ac01",
+    storageBucket: "creativeking-2ac01.firebasestorage.app",
+    messagingSenderId: "539027204055",
+    appId: "1:539027204055:web:81ccc51f3817f141518d92"
+  };
+  
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+  
+  function escapeHtml(str) { if (!str) return ''; return str.replace(/[&<>]/g, function(m) { if (m === '&') return '&amp;'; if (m === '<') return '&lt;'; if (m === '>') return '&gt;'; return m; }); }
+  
+  const portfolioRef = ref(db, 'portfolio');
+  onValue(portfolioRef, (snapshot) => {
+    const container = document.getElementById('portfolioGrid');
+    const data = snapshot.val();
+    if (!data) { container.innerHTML = '<p>No projects yet. Check back soon!</p>'; return; }
+    let html = '';
+    Object.entries(data).forEach(([key, proj]) => {
+      if (proj.approved !== true) return;
+      html += `
+        <div class="portfolio-card" data-aos="fade-up">
+          <img src="${proj.imageUrl}" alt="${escapeHtml(proj.title)}" loading="lazy">
+          <div class="portfolio-info">
+            <h3>${escapeHtml(proj.title)}</h3>
+            <div class="portfolio-location"><i class="fas fa-map-marker-alt"></i> ${escapeHtml(proj.location)}</div>
+            <p>${escapeHtml(proj.description)}</p>
+            <div class="portfolio-details">
+              <p><strong>Materials:</strong> ${escapeHtml(proj.materials)}</p>
+              <p><strong>Budget range:</strong> ${escapeHtml(proj.budgetRange)}</p>
+              <p><strong>Timeline:</strong> ${escapeHtml(proj.timeline)}</p>
+            </div>
+            <a href="https://wa.me/2347064098755?text=Hi,%20I%20saw%20the%20${encodeURIComponent(proj.title)}%20project" class="btn btn-outline btn-small">Request similar →</a>
+          </div>
+        </div>
+      `;
+    });
+    container.innerHTML = html || '<p>No approved projects yet.</p>';
+    AOS.refresh();
+  }, (error) => { console.error(error); document.getElementById('portfolioGrid').innerHTML = '<p>Error loading projects.</p>'; });
+  
+  AOS.init({ duration: 800, once: true, offset: 120 });
+  
+  // ========== HAMBURGER MENU TOGGLE ==========
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  const body = document.body;
+  
+  function closeMenu() {
+    navLinks.classList.remove('show');
+    body.classList.remove('menu-open');
+    const icon = menuToggle.querySelector('i');
+    if (icon) icon.classList.remove('fa-times');
+    if (icon) icon.classList.add('fa-bars');
+  }
+  
+  function openMenu() {
+    navLinks.classList.add('show');
+    body.classList.add('menu-open');
+    const icon = menuToggle.querySelector('i');
+    if (icon) icon.classList.remove('fa-bars');
+    if (icon) icon.classList.add('fa-times');
+  }
+  
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (navLinks.classList.contains('show')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+  
+  // Close menu when a link is clicked
+  const navLinkItems = document.querySelectorAll('.nav-links a');
+  navLinkItems.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+  
+  // Close menu if clicking outside
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('show') && !navLinks.contains(e.target) && e.target !== menuToggle && !menuToggle.contains(e.target)) {
+      closeMenu();
+    }
+  });
+</script>
+</body>
+</html>

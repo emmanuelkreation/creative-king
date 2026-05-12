@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Contact Us | Creative King – Ikeja Lagos</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Get in touch with Creative Kings for luxury staircase design, gate fabrication, glass works & pivot doors in Ikeja, Lagos. Free consultation.">
+  <meta name="keywords" content="contact creative kings, staircase design lagos, gate fabrication ikeja, metal works contact">
+  <meta name="author" content="Creative Kings">
+  <link rel="canonical" href="https://www.creativekings.ng/contact">
+  <!-- Favicon (adjust path if needed) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contact Creative Kings – Luxury Metal Works Lagos">
+  <meta property="og:description" content="Reach out for a free quote or consultation. We serve Ikeja, Lagos and nationwide.">
+  <meta property="og:image" content="https://images.pexels.com/photos/1457842/architecture-stairs-modern-lighting-1457842.jpeg">
+  <meta property="og:url" content="https://www.creativekings.ng/contact">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #0A0A0A;
+      color: #EAEAEA;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    :root {
+      --gold: #D4AF37;
+      --gold-dark: #B8902C;
+      --charcoal: #1A1A1A;
+      --black: #000000;
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #1A1A1A; }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+    h1, h2, h3, .serif {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    h1 { font-size: 4rem; line-height: 1.1; }
+    h2 { font-size: 2.8rem; margin-bottom: 1rem; }
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 2rem; }
+    }
+    .gold-text { color: var(--gold); }
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s ease;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: #0A0A0A;
+    }
+    .btn-primary:hover {
+      background: var(--gold-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--gold);
+      color: white;
+    }
+    .btn-outline:hover {
+      background: rgba(212, 175, 55, 0.1);
+      transform: translateY(-3px);
+    }
+    /* Navigation */
+    nav {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1.5rem 2rem;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+    }
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-img {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+    }
+    .logo-text h2 {
+      font-size: 1.6rem;
+      color: white;
+      margin: 0;
+      line-height: 1;
+    }
+    .logo-text p {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      color: var(--gold);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    
+    /* Hamburger menu button (hidden on desktop) */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--gold);
+      cursor: pointer;
+      z-index: 101;
+    }
+    
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+        z-index: 100;
+        padding: 2rem;
+      }
+      .nav-links.show {
+        right: 0;
+      }
+      .nav-links a {
+        font-size: 1.2rem;
+      }
+      nav {
+        padding: 1rem;
+      }
+      body.menu-open {
+        overflow: hidden;
+      }
+    }
+    
+    /* Page Header */
+    .page-header {
+      height: 45vh;
+      min-height: 320px;
+      background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1600');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    /* Contact Section */
+    .contact-section {
+      padding: 5rem 2rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 3rem;
+    }
+    .contact-info {
+      background: var(--charcoal);
+      border-radius: 32px;
+      padding: 2rem;
+      border: 1px solid rgba(212,175,55,0.3);
+    }
+    .contact-info h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .info-item i {
+      font-size: 1.5rem;
+      color: var(--gold);
+      width: 40px;
+    }
+    .info-item p {
+      line-height: 1.5;
+    }
+    .info-item a {
+      color: #ddd;
+      text-decoration: none;
+    }
+    .info-item a:hover {
+      color: var(--gold);
+    }
+    .social-contact {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+    }
+    .social-contact a {
+      background: #0A0A0A;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: var(--gold);
+      transition: 0.2s;
+    }
+    .social-contact a:hover {
+      background: var(--gold);
+      color: #0A0A0A;
+      transform: translateY(-3px);
+    }
+    .contact-form {
+      background: var(--charcoal);
+      border-radius: 32px;
+      padding: 2rem;
+      border: 1px solid rgba(212,175,55,0.3);
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 1rem;
+      background: #222;
+      border: 1px solid #333;
+      color: white;
+      border-radius: 16px;
+      font-family: 'Inter', sans-serif;
+    }
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+    .map-container {
+      margin-top: 4rem;
+      border-radius: 32px;
+      overflow: hidden;
+      border: 1px solid rgba(212,175,55,0.3);
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 400px;
+      border: 0;
+    }
+    /* Footer (same as other pages) */
+    footer {
+      background: #000;
+      padding: 3rem 2rem 1.5rem;
+      border-top: 1px solid rgba(212,175,55,0.2);
+    }
+    .footer-grid {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .footer-col h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--gold);
+    }
+    .footer-col p, .footer-col a { color: #aaa; text-decoration: none; line-height: 1.6; }
+    .footer-col a:hover { color: var(--gold); }
+    .social-links a { margin-right: 1rem; font-size: 1.4rem; }
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(212,175,55,0.2);
+      font-size: 0.8rem;
+      color: #777;
+    }
+    .copyright a { color: var(--gold); }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #25D366;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      z-index: 99;
+      transition: 0.2s;
+    }
+    .whatsapp-float:hover { transform: scale(1.08); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="images/logo.png" alt="Creative King Logo" class="logo-img">
+      <div class="logo-text">
+        <h2>CREATIVE KING</h2>
+        <p>FABRICATION</p>
+      </div>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about">About</a>
+      <a href="services">Services</a>
+      <a href="portfolio">Portfolio</a>
+      <a href="reviews">Reviews</a>
+      <a href="contact" class="active">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<section class="page-header" data-aos="fade-up">
+  <div>
+    <h1>Contact <span class="gold-text">Us</span></h1>
+    <p class="gold-text" style="font-size: 1.2rem; margin-top: 0.5rem;">Let’s bring your vision to life</p>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section" data-aos="fade-up">
+  <div class="contact-grid">
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h3>Get in <span class="gold-text">Touch</span></h3>
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <p><strong>Head Office:</strong><br>20 Araromi St, off Akinremi St, Ikeja, Lagos</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-phone-alt"></i>
+        <p><strong>Phone / WhatsApp:</strong><br><a href="tel:+2347064098755">+234 706 409 8755</a></p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <p><strong>Email:</strong><br><a href="mailto:enquirycreativeking@gmail.com">enquirycreativeking@gmail.com</a></p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-clock"></i>
+        <p><strong>Office Hours:</strong><br>Mon – Fri: 8am – 6pm<br>Sat: 10am – 3pm<br>Sun: Closed (emergency only)</p>
+      </div>
+      <div class="social-contact">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="#" aria-label="X"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2H21.5l-7.19 8.21L22 22h-6.828l-5.35-7.007L3.5 22H.244l7.68-8.77L2 2h6.828l4.83 6.35L18.244 2z"/></svg></a>
+      </div>
+    </div>
+
+    <!-- Contact Form (Formspree Integration) -->
+    <div class="contact-form">
+      <h3>Send us a <span class="gold-text">Message</span></h3>
+      <!-- Success/error messages will appear in these divs -->
+      <div data-fs-success style="display: none; background: #003300; padding: 0.8rem; border-radius: 8px; margin-bottom: 1rem; text-align: center;">
+        <i class="fas fa-check-circle"></i> Thank you! We will get back to you within 24 hours.
+      </div>
+      <div data-fs-error style="display: none; background: #330000; padding: 0.8rem; border-radius: 8px; margin-bottom: 1rem; text-align: center;">
+        <i class="fas fa-exclamation-triangle"></i> Something went wrong. Please try again.
+      </div>
+      
+      <form id="contact-form" action="https://formspree.io/f/xjgjawro" method="POST">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your full name" required data-fs-field>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Email address" required data-fs-field>
+          <span data-fs-error="email"></span>
+        </div>
+        <div class="form-group">
+          <input type="tel" name="phone" placeholder="Phone number" data-fs-field>
+        </div>
+        <div class="form-group">
+          <select name="service" data-fs-field>
+            <option value="">I'm interested in...</option>
+            <option>Staircase Design</option>
+            <option>Gate Fabrication</option>
+            <option>Glass & Metal Works</option>
+            <option>Pivot Door</option>
+            <option>Other / Consultation</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <textarea name="message" rows="5" placeholder="Tell us about your project..." required data-fs-field></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" data-fs-submit-btn><i class="fas fa-paper-plane"></i> Send Message</button>
+      </form>
+      <p style="margin-top: 1rem; font-size: 0.8rem;">We'll reply within 24 hours. Free consultation for all inquiries.</p>
+    </div>
+  </div>
+
+  <!-- Google Map -->
+  <div class="map-container" data-aos="fade-up">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.045678901234!2d3.3515!3d6.6018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b93b0c0b0b0b1%3A0x0!2zNsKwMzYnMDYuNSJOIDPCsDIxJzA1LjQiRQ!5e0!3m2!1sen!2sng!4v1234567890123!5m2!1sen!2sng" 
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Creative King</h4>
+      <p>Luxury staircase design & metal fabrication. Transforming homes across Lagos and Nigeria. Head office in <strong>Ikeja, Lagos</strong>.</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/creativekings.ng"><i class="fab fa-instagram"></i></a>
+        <a href="https://web.facebook.com/people/Creative-King-Fabrication/61584915017676/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.tiktok.com/@creative_kings_"><i class="fab fa-tiktok"></i></a>
+        <a href="https://x.com/creativekinghq" class="x-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M18.244 2H21.5l-7.19 8.21L22 22h-6.828l-5.35-7.007L3.5 22H.244l7.68-8.77L2 2h6.828l4.83 6.35L18.244 2zm-2.396 18h1.885L7.21 4H5.23l10.618 16z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <p><a href="index.html">Home</a></p>
+      <p><a href="about">About</a></p>
+      <p><a href="services">Services</a></p>
+      <p><a href="portfolio">Portfolio</a></p>
+      <p><a href="reviews">Reviews</a></p>
+      <p><a href="contact">Contact</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p><i class="fas fa-phone"></i> +234 706 409 8755</p>
+      <p><i class="fas fa-envelope"></i> enquirycreativeking@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> 20 Araromi St, off Akinremi St, Ikeja, Lagos</p>
+    </div>
+    <div class="footer-col">
+      <h4>Office Hours</h4>
+      <p>Mon – Fri: 8am – 6pm</p>
+      <p>Sat: 10am – 3pm</p>
+      <p>Sun: Closed (emergency only)</p>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>© 2025 Creative King | Built by <a href="kreationdigitals.com" target="_blank">Kreation Digitals</a></p>
+  </div>
+</footer>
+
+<a href="https://wa.me/2347064098755?text=Hi,%20I%20visited%20your%20contact%20page%20and%20would%20like%20to%20discuss%20a%20project." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- Formspree AJAX Script -->
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'xjgjawro' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+<script>
+  AOS.init({ duration: 800, once: true, offset: 120 });
+  
+  // ========== HAMBURGER MENU TOGGLE ==========
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  const body = document.body;
+  
+  function closeMenu() {
+    navLinks.classList.remove('show');
+    body.classList.remove('menu-open');
+    const icon = menuToggle.querySelector('i');
+    if (icon) icon.classList.remove('fa-times');
+    if (icon) icon.classList.add('fa-bars');
+  }
+  
+  function openMenu() {
+    navLinks.classList.add('show');
+    body.classList.add('menu-open');
+    const icon = menuToggle.querySelector('i');
+    if (icon) icon.classList.remove('fa-bars');
+    if (icon) icon.classList.add('fa-times');
+  }
+  
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (navLinks.classList.contains('show')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+  
+  const navLinkItems = document.querySelectorAll('.nav-links a');
+  navLinkItems.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+  
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('show') && !navLinks.contains(e.target) && e.target !== menuToggle && !menuToggle.contains(e.target)) {
+      closeMenu();
+    }
+  });
+</script>
+</body>
+</html>

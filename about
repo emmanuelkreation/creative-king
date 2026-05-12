@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+  <title>About Us | Creative King – Luxury Metalworks Ikeja Lagos</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Creative king: 7+ years of luxury staircase design, gate fabrication, glass works & pivot doors in Ikeja, Lagos. Meet our team, see our story.">
+  <meta name="keywords" content="about creative king, luxury metalworks lagos, staircase design ikeja, team">
+  <meta name="author" content="Creative king">
+  <link rel="canonical" href="https://www.creativeking.ng/about">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="About Creative King – Luxury Metalworks Lagos">
+  <meta property="og:description" content="We combine engineering precision with artistic vision. Based in Ikeja, serving nationwide.">
+  <meta property="og:image" content="https://images.pexels.com/photos/1571460/stairs-architecture-modern-lighting-1571460.jpeg">
+  <meta property="og:url" content="https://www.creativeking.ng/about">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    /* All styles remain exactly as you provided – unchanged */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0A0A0A;
+      color: #EAEAEA;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    
+    :root {
+      --gold: #D4AF37;
+      --gold-dark: #B8902C;
+      --charcoal: #1A1A1A;
+      --black: #000000;
+    }
+    
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #1A1A1A; }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+    
+    h1, h2, h3, h4, .font-serif {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    
+    .gold-text { color: var(--gold); }
+    
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+    
+    /* Buttons */
+    .btn-primary, .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.9rem 2rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    
+    .btn-primary {
+      background: var(--gold);
+      color: #0A0A0A;
+      border: 2px solid var(--gold);
+    }
+    
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--gold);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      border: 2px solid rgba(245, 245, 245, 0.3);
+      color: white;
+    }
+    
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-3px);
+      background: rgba(212, 175, 55, 0.05);
+    }
+    
+    /* Navigation */
+    nav {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1.5rem 2rem;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+    }
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-img {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+    }
+    .logo-text h2 {
+      font-size: 1.6rem;
+      color: white;
+      margin: 0;
+      line-height: 1;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .logo-text p {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      color: var(--gold);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--gold);
+      cursor: pointer;
+      z-index: 101;
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+        z-index: 100;
+        padding: 2rem;
+      }
+      .nav-links.show {
+        right: 0;
+      }
+      .nav-links a {
+        font-size: 1.2rem;
+      }
+      nav {
+        padding: 1rem;
+      }
+      body.menu-open {
+        overflow: hidden;
+      }
+    }
+    
+    /* Page Header Hero */
+    .page-hero {
+      height: 60vh;
+      min-height: 500px;
+      background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1600');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .page-hero-content {
+      max-width: 800px;
+      padding: 0 1.5rem;
+    }
+    .page-hero h1 {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      margin-bottom: 1rem;
+    }
+    .page-hero p {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.9);
+    }
+    
+    /* Story Section */
+    .story-section {
+      padding: 5rem 0;
+      background: var(--black);
+    }
+    .story-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      align-items: center;
+    }
+    .story-text {
+      flex: 1.5;
+      order: 1;
+    }
+    .story-image {
+      flex: 1;
+      order: 2;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+    }
+    .story-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: 0.5s;
+    }
+    .story-image:hover img {
+      transform: scale(1.02);
+    }
+    @media (max-width: 768px) {
+      .story-grid {
+        flex-direction: column;
+        text-align: center;
+      }
+      .story-text {
+        order: 2;
+      }
+      .story-image {
+        order: 1;
+        max-width: 80%;
+        margin: 0 auto;
+      }
+    }
+    .story-text h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 1.5rem;
+    }
+    .story-text p {
+      line-height: 1.7;
+      color: #ccc;
+      margin-bottom: 1rem;
+    }
+    
+    /* Mission & Vision */
+    .mission-vision {
+      padding: 5rem 0;
+      background: var(--charcoal);
+      text-align: center;
+    }
+    .mv-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .mv-card {
+      background: #0A0A0A;
+      padding: 2rem;
+      border-radius: 28px;
+      width: 320px;
+      border: 1px solid rgba(212,175,55,0.3);
+      transition: 0.3s;
+    }
+    .mv-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+    }
+    .mv-card i {
+      font-size: 3rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    
+    /* Timeline */
+    .timeline {
+      padding: 5rem 0;
+      text-align: center;
+    }
+    .timeline-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .timeline-item {
+      flex: 1;
+      min-width: 200px;
+      background: rgba(26,26,26,0.6);
+      padding: 1.5rem;
+      border-radius: 20px;
+      border-left: 4px solid var(--gold);
+      text-align: left;
+    }
+    .timeline-year {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--gold);
+      font-family: 'Cormorant Garamond', serif;
+    }
+    
+    /* Values */
+    .values {
+      padding: 5rem 0;
+      background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1600');
+      background-attachment: fixed;
+      text-align: center;
+    }
+    .values-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .value-item {
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(6px);
+      width: 240px;
+      padding: 1.8rem;
+      border-radius: 24px;
+    }
+    .value-item i {
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    
+    /* CEO Speech Section */
+    .ceo-speech-section {
+      padding: 5rem 0;
+      background: var(--black);
+    }
+    .ceo-card {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: var(--charcoal);
+      border-radius: 32px;
+      padding: 3rem;
+      border: 1px solid rgba(212,175,55,0.3);
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    @media (max-width: 768px) {
+      .ceo-card {
+        padding: 2rem;
+      }
+    }
+    .ceo-icon {
+      font-size: 4rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .ceo-name {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .ceo-title {
+      font-size: 1rem;
+      color: var(--gold);
+      letter-spacing: 2px;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+    .ceo-speech {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #ddd;
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
+    .ceo-speech p {
+      margin-bottom: 1rem;
+    }
+    .ceo-signature {
+      text-align: right;
+      font-style: italic;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(212,175,55,0.3);
+    }
+    .ceo-signature i {
+      color: var(--gold);
+      margin-right: 0.5rem;
+    }
+    
+    /* Team Section */
+    .team-section {
+      padding: 5rem 0;
+      background: var(--black);
+      text-align: center;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .team-card {
+      background: var(--charcoal);
+      border-radius: 28px;
+      padding: 1.8rem;
+      transition: 0.3s;
+      border: 1px solid rgba(212,175,55,0.2);
+    }
+    .team-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold);
+    }
+    .team-icon {
+      font-size: 3.5rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .team-role {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+    .team-name {
+      font-size: 1.4rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .team-message {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #ccc;
+      font-style: italic;
+    }
+    .team-general-message {
+      max-width: 800px;
+      margin: 4rem auto 0;
+      padding: 2rem;
+      background: rgba(212,175,55,0.1);
+      border-radius: 32px;
+      border-left: 4px solid var(--gold);
+      text-align: left;
+    }
+    
+    /* CTA Banner */
+    .cta-banner {
+      text-align: center;
+      padding: 5rem 2rem;
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1600');
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    .cta-banner h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 1rem;
+    }
+    
+    /* Footer */
+    footer {
+      background: #000;
+      padding: 3rem 2rem 1.5rem;
+      border-top: 1px solid rgba(212,175,55,0.2);
+    }
+    .footer-grid {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .footer-col h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--gold);
+    }
+    .footer-col p, .footer-col a { color: #aaa; text-decoration: none; line-height: 1.6; }
+    .footer-col a:hover { color: var(--gold); }
+    .social-links a { margin-right: 1rem; font-size: 1.4rem; }
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(212,175,55,0.2);
+      font-size: 0.8rem;
+      color: #777;
+    }
+    .copyright a { color: var(--gold); }
+    
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #25D366;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      z-index: 99;
+      transition: 0.2s;
+    }
+    .whatsapp-float:hover { transform: scale(1.08); }
+    @media (max-width: 480px) {
+      .whatsapp-float { width: 50px; height: 50px; font-size: 1.8rem; bottom: 15px; right: 15px; }
+    }
+    
+    /* Read More Button (mobile only) */
+    .read-more-btn {
+      background: none;
+      border: none;
+      color: var(--gold);
+      font-weight: 600;
+      text-decoration: underline;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+    }
+    .read-more-btn:hover { color: var(--gold-dark); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="images/logo.png" alt="Creative King Logo" class="logo-img">
+      <div class="logo-text">
+        <h2>CREATIVE KING</h2>
+        <p>FABRICATION</p>
+      </div>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about" class="active">About</a>
+      <a href="services">Services</a>
+      <a href="portfolio">Portfolio</a>
+      <a href="reviews">Reviews</a>
+      <a href="contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="page-hero" data-aos="fade-up">
+  <div class="page-hero-content">
+    <h1>About <span class="gold-text">Creative King</span></h1>
+    <p class="gold-text">Crafting luxury space since 2016</p>
+  </div>
+</section>
+
+<!-- Story Section -->
+<section class="story-section" data-aos="fade-up">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-text" id="storyText">
+        <h2>Our <span class="gold-text">Story</span></h2>
+        <p>At Creative King Fabrication , our story is built around one defining idea: Every space deserves a statement. We saw that many buildings were complete—but not expressive. Staircases were treated as ordinary structures, gates as mere barriers, and metal or glass work as basic finishes. To us, that was a missed opportunity.So we chose a different path.</p>
+        <p>We began redefining staircases as architectural centerpieces—bold, elegant, and unforgettable. </p>
+      </div>
+      <div class="story-image">
+        <img src="images/logo.png" alt="Creative King Workshop">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission & Vision -->
+<section class="mission-vision" data-aos="fade-up">
+  <div class="container">
+    <h2>Our <span class="gold-text">Mission & Vision</span></h2>
+    <div class="mv-grid">
+      <div class="mv-card">
+        <i class="fas fa-bullseye"></i>
+        <h3>Mission</h3>
+        <p>To deliver flawlessly engineered metalwork that elevates every space – combining modern aesthetics, durable materials, and client‑centric service.</p>
+      </div>
+      <div class="mv-card">
+        <i class="fas fa-eye"></i>
+        <h3>Vision</h3>
+        <p>To become Nigeria’s most sought‑after architectural metalwork brand, known for pushing design boundaries while maintaining structural integrity.</p>
+      </div>
+      <div class="mv-card">
+        <i class="fas fa-handshake"></i>
+        <h3>Promise</h3>
+        <p>No shortcuts, no “we can try”. Every weld, every glass panel, every finish is inspected before installation. Your staircase will be as solid in 10 years as on day one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="timeline" data-aos="fade-up">
+  <div class="container">
+    <h2>Our <span class="gold-text">Journey</span></h2>
+    <div class="timeline-items">
+      <div class="timeline-item"><div class="timeline-year"></div><p>Creative king started with a clear vision—to turn everyday structures into bold design statements through precision and creativity.</p></div>
+      <div class="timeline-item"><div class="timeline-year"></div><p>We began by mastering the art of fabrication, focusing on quality, durability, and attention to detail in every project we handled.</p></div>
+      <div class="timeline-item"><div class="timeline-year"></div><p>As our expertise grew, we redefined staircases into luxury centerpieces, transforming functional spaces into standout architectural features.</p></div>
+      <div class="timeline-item"><div class="timeline-year"></div><p>Our journey expanded into premium gates, custom metal works, glass installations, and pivot wooden doors designed to leave lasting impressions.</p></div>
+      <div class="timeline-item"><div class="timeline-year"></div><p>Today, Creative king continues to evolve, pushing boundaries and creating spaces that are not just built—but designed to stand out.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Values -->
+<section class="values" data-aos="fade-up">
+  <div class="container">
+    <h2>What we <span class="gold-text">stand for</span></h2>
+    <div class="values-grid">
+      <div class="value-item"><i class="fas fa-lightbulb"></i><h3>Innovation</h3><p>We stay ahead with 3D renderings and modern techniques.</p></div>
+      <div class="value-item"><i class="fas fa-gem"></i><h3>Excellence</h3><p>No compromise on finish or materials.</p></div>
+      <div class="value-item"><i class="fas fa-users"></i><h3>Integrity</h3><p>Nothing hidden. Every cost, every detail, fully disclosed.</p></div>
+      <div class="value-item"><i class="fas fa-clock"></i><h3>Punctuality</h3><p>We respect your timeline – weekly updates guaranteed.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CEO Speech Section -->
+<section class="ceo-speech-section" data-aos="fade-up">
+  <div class="container">
+    <div class="ceo-card" data-aos="zoom-in">
+      <div class="ceo-icon">
+        <i class="fas fa-crown"></i>
+      </div>
+      <h2 class="ceo-name">Adedoyin Babafemi Fakoya</h2>
+      <div class="ceo-title">Chief Executive Officer</div>
+      <div class="ceo-speech">
+        <p>“At Creative king, we don’t just build structures — we create statements. Every project reflects our commitment to precision, innovation, and excellence. Our goal is simple: deliver beyond expectations and redefine modern fabrication in Nigeria.”</p>
+        <p>“I started this journey with a belief that every space deserves to be extraordinary. Too often, I saw beautiful homes and offices held back by ordinary staircases, uninspired gates, or poorly finished metalwork. That gap became our purpose.”</p>
+        <p>“Today, Creative king stands as a testament to what happens when craftsmanship meets vision. Our team of dedicated professionals works tirelessly to ensure that every weld, every glass panel, every finish is flawless. We don't cut corners — we build legacies.”</p>
+        <p>“Whether it's a floating staircase that becomes the heart of your home, a pivot door that makes an unforgettable first impression, or a complete turnkey project, we approach each task with the same passion: to create something you'll be proud to show off for years to come.”</p>
+        <p>“I invite you to experience the Creative king difference. Let's build something extraordinary together.”</p>
+      </div>
+      <div class="ceo-signature">
+        <i class="fas fa-signature"></i> Adedoyin Babafemi Fakoya<br>
+        <span style="font-size: 0.8rem;">CEO, Creative King Fabrication</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section class="team-section" data-aos="fade-up">
+  <div class="container">
+    <h2>👑 Our <span class="gold-text">Leadership & Team</span></h2>
+    <p class="gold-text" style="margin-bottom: 1rem;">Creative king</p>
+    <div class="team-grid" id="teamGrid"></div>
+    <div class="team-general-message">
+      <p><strong>💬 GENERAL TEAM MESSAGE</strong><br><br>
+      At Creative king, our team is made up of skilled professionals dedicated to craftsmanship, innovation, and excellence. Together, we turn ideas into reality — delivering structures that combine strength, beauty, and functionality.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner" data-aos="fade-up">
+  <div class="container">
+    <h2>Ready to build your <span class="gold-text">statement piece</span>?</h2>
+    <p style="margin-bottom: 1.5rem;">Let’s turn your vision into a reality – from consultation to installation.</p>
+    <a href="contact" class="btn-primary">Request a free quote →</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Creative king</h4>
+      <p>Luxury staircase design. Transforming homes across Lagos and Nigeria. Head office in <strong>Ikeja, Lagos</strong>.</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/creativeking.ng"><i class="fab fa-instagram"></i></a>
+        <a href="https://web.facebook.com/people/Creative-King-Fabrication/61584915017676/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.tiktok.com/@creative_king_"><i class="fab fa-tiktok"></i></a>
+        <a href="https://x.com/creativekinghq"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <p><a href="index.html">Home</a></p>
+      <p><a href="about">About</a></p>
+      <p><a href="services">Services</a></p>
+      <p><a href="portfolio">Portfolio</a></p>
+      <p><a href="reviews">Reviews</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p><i class="fas fa-phone"></i> +234 706 409 8755</p>
+      <p><i class="fas fa-envelope"></i> enquirycreativeking@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> 20 Araromi St, off Akinremi St, Ikeja, Lagos</p>
+    </div>
+    <div class="footer-col">
+      <h4>Office Hours</h4>
+      <p>Mon – Fri: 8am – 6pm</p>
+      <p>Sat: 10am – 3pm</p>
+      <p>Sun: Closed (emergency only)</p>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>© 2025 Creative King | Built by <a href="#" target="_blank">Kreation Digitals</a></p>
+  </div>
+</footer>
+
+<a href="https://wa.me/2347064098755?text=Hi%2C%20I%20saw%20your%20about%20page%20–%20I%27m%20interested%20in%20a%20project." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  // Team data – updated with appropriate icons for each role
+  const teamMembers = [
+    { role: "CEO", name: "Adedoyin Babafemi Fakoya", msg: "“At Creative king, we don’t just build structures — we create statements. Every project reflects our commitment to precision, innovation, and excellence. Our goal is simple: deliver beyond expectations and redefine modern fabrication in Nigeria.”", icon: "fa-crown" },
+    { role: "Executive Director", name: "Adedeji Adeyinka Fakoya", msg: "“We ensure every operation aligns with our vision of quality and growth. From planning to execution, our focus is efficiency, structure, and delivering value to every client we serve.”", icon: "fa-user-tie" },
+    { role: "Operations Manager", name: "Oluwaseun Oluwaseyi", msg: "“I oversee daily operations to ensure every project is executed efficiently, delivered on time, and meets the company’s standards across all departments.”", icon: "fa-cogs" },
+    { role: "Finance Manager", name: "Aderinsola Ayomiposi Fakoya", msg: "“We ensure financial transparency, proper planning, and accountability — keeping the company stable, efficient, and positioned for growth.”", icon: "fa-chart-line" },
+    { role: "Human Resources Manager", name: "Adedamola Olabamiji Fakoya", msg: "“Our strength is our people. We build a team that is skilled, disciplined, and driven to maintain the high standards Creative King is known for.”", icon: "fa-users" },
+    { role: "Marketing Lead", name: "Ashabi Rukayat Ayinla", msg: "“We position Creative Kings strategically in the market by reaching the right audience and clearly communicating the value of our work.”", icon: "fa-bullhorn" },
+    { role: "Designs & 3D Lead", name: "Ibrahim Oladidupo Amao", msg: "“We turn ideas into visuals before execution. Our 3D designs help clients see the final result before we even begin.”", icon: "fa-cube" },
+    { role: "Architectural Glass Expert", name: "Oluwafemi Ayodele Ajao", msg: "“We deliver precision in glass fabrication and installation, ensuring clean, modern finishes that enhance every project.”", icon: "fa-glass-cheers" },
+    { role: "Maintenance & Quality Control", name: "Adebayo Adekola", msg: "“We inspect and maintain quality across all projects, ensuring every delivery meets Creative Kings’ standards before handover.”", icon: "fa-check-double" },
+    { role: "Client Relations Manager", name: "Hannah Miracle Ayodeji", msg: "“We maintain strong relationships with clients — ensuring satisfaction from first contact to project completion.”", icon: "fa-headset" },
+    { role: "Social Media Manager", name: "Marvellous Oluwadamilola Ajose", msg: "“We bring our craftsmanship to life online. Every post, video, and interaction is designed to showcase our work, build trust, and connect with clients who value quality.”", icon: "fa-hashtag" }
+  ];
+
+  function renderTeam() {
+    const container = document.getElementById('teamGrid');
+    if (!container) return;
+    let html = '';
+    teamMembers.forEach(m => {
+      html += `
+        <div class="team-card">
+          <div class="team-icon"><i class="fas ${m.icon}"></i></div>
+          <div class="team-role">${m.role}</div>
+          <div class="team-name">${m.name}</div>
+          <div class="team-message">${m.msg}</div>
+        </div>
+      `;
+    });
+    container.innerHTML = html;
+  }
+  renderTeam();
+
+  // Read More functionality (mobile only) – same as before
+  function initReadMore() {
+    const storyDiv = document.getElementById('storyText');
+    if (!storyDiv) return;
+    const fullHTML = storyDiv.innerHTML;
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = fullHTML;
+    const textContent = tempDiv.textContent || tempDiv.innerText;
+    const wordCount = textContent.split(/\s+/).length;
+    const isMobile = window.innerWidth <= 768;
+    const existingBtn = storyDiv.querySelector('.read-more-btn');
+    if (existingBtn) existingBtn.remove();
+    
+    if (isMobile && wordCount > 100) {
+      let words = textContent.split(/\s+/);
+      let truncated = words.slice(0, 100).join(' ') + '...';
+      const shortHTML = `<p>${truncated}</p>`;
+      storyDiv.innerHTML = shortHTML;
+      
+      const button = document.createElement('button');
+      button.className = 'read-more-btn';
+      button.textContent = 'Read more';
+      let expanded = false;
+      button.onclick = () => {
+        if (!expanded) {
+          storyDiv.innerHTML = fullHTML;
+          button.textContent = 'Show less';
+          expanded = true;
+        } else {
+          storyDiv.innerHTML = shortHTML;
+          button.textContent = 'Read more';
+          expanded = false;
+        }
+      };
+      storyDiv.appendChild(button);
+    } else {
+      storyDiv.innerHTML = fullHTML;
+    }
+  }
+  
+  initReadMore();
+  window.addEventListener('resize', initReadMore);
+  
+  // AOS
+  AOS.init({ duration: 800, once: true, offset: 120 });
+  
+  // Hamburger menu
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  const body = document.body;
+  
+  function closeMenu() {
+    navLinks.classList.remove('show');
+    body.classList.remove('menu-open');
+    const icon = menuToggle.querySelector('i');
+    if (icon) icon.classList.remove('fa-times');
+    if (icon) icon.classList.add('fa-bars');
+  }
+  function openMenu() {
+    navLinks.classList.add('show');
+    body.classList.add('menu-open');
+    const icon = menuToggle.querySelector('i');
+    if (icon) icon.classList.remove('fa-bars');
+    if (icon) icon.classList.add('fa-times');
+  }
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (navLinks.classList.contains('show')) closeMenu();
+    else openMenu();
+  });
+  document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('show') && !navLinks.contains(e.target) && e.target !== menuToggle && !menuToggle.contains(e.target)) {
+      closeMenu();
+    }
+  });
+</script>
+</body>
+</html>

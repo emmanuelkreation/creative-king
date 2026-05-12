@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Reviews | Creative king – Client Testimonials</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background-color: #0A0A0A; color: #EAEAEA; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+    :root { --gold: #D4AF37; --gold-dark: #B8902C; --charcoal: #1A1A1A; --black: #000000; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #1A1A1A; }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; letter-spacing: -0.02em; }
+    h1 { font-size: 4rem; line-height: 1.1; }
+    h2 { font-size: 2.8rem; margin-bottom: 1rem; }
+    @media (max-width: 768px) { h1 { font-size: 2.5rem; } h2 { font-size: 2rem; } }
+    .gold-text { color: var(--gold); }
+    .btn { display: inline-block; padding: 0.9rem 2rem; border-radius: 40px; font-weight: 600; text-decoration: none; transition: 0.3s; font-size: 1rem; border: none; cursor: pointer; }
+    .btn-primary { background: var(--gold); color: #0A0A0A; }
+    .btn-outline { background: transparent; border: 1.5px solid var(--gold); color: white; }
+    
+    /* Navigation */
+    nav { position: absolute; top: 0; width: 100%; z-index: 100; padding: 1.5rem 2rem; background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent); }
+    .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo-img { height: 50px; width: auto; object-fit: contain; }
+    .logo-text h2 { font-size: 1.6rem; color: white; margin: 0; line-height: 1; }
+    .logo-text p { font-size: 0.7rem; letter-spacing: 2px; color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: white; text-decoration: none; font-weight: 500; transition: 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    
+    /* Hamburger menu button (hidden on desktop) */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--gold);
+      cursor: pointer;
+      z-index: 101;
+    }
+    
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+        z-index: 100;
+        padding: 2rem;
+      }
+      .nav-links.show {
+        right: 0;
+      }
+      .nav-links a {
+        font-size: 1.2rem;
+      }
+      nav {
+        padding: 1rem;
+      }
+      body.menu-open {
+        overflow: hidden;
+      }
+    }
+    
+    .page-header { height: 50vh; min-height: 350px; background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .reviews-section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
+    .review-card { background: var(--charcoal); border-radius: 24px; padding: 1.8rem; border-left: 4px solid var(--gold); transition: 0.3s; }
+    .review-card:hover { transform: translateY(-5px); }
+    .review-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; }
+    .review-name { font-weight: 600; font-size: 1.1rem; }
+    .review-stars { color: var(--gold); letter-spacing: 2px; }
+    .review-project { font-size: 0.8rem; color: var(--gold); margin-bottom: 0.5rem; }
+    .review-message { line-height: 1.5; margin: 1rem 0; color: #ddd; }
+    .review-image { margin-top: 1rem; border-radius: 16px; overflow: hidden; max-width: 100%; }
+    .review-image img { width: 100%; max-height: 200px; object-fit: cover; }
+    .review-form-container { background: var(--charcoal); border-radius: 32px; padding: 2.5rem; border: 1px solid rgba(212,175,55,0.3); margin-top: 2rem; }
+    .form-group { margin-bottom: 1.5rem; }
+    input, textarea, select { width: 100%; padding: 1rem; background: #222; border: 1px solid #333; color: white; border-radius: 16px; font-family: 'Inter', sans-serif; }
+    input:focus, textarea:focus, select:focus { outline: none; border-color: var(--gold); }
+    .rating-stars i { font-size: 1.8rem; cursor: pointer; color: #555; transition: 0.1s; margin-right: 5px; }
+    .rating-stars i.active, .rating-stars i:hover { color: var(--gold); }
+    .help-text { font-size: 0.75rem; color: #aaa; margin-top: -0.5rem; margin-bottom: 0.5rem; }
+    footer { background: #000; padding: 3rem 2rem 1.5rem; border-top: 1px solid rgba(212,175,55,0.2); }
+    .footer-grid { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+    .footer-col h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-bottom: 1rem; color: var(--gold); }
+    .footer-col p, .footer-col a { color: #aaa; text-decoration: none; line-height: 1.6; }
+    .footer-col a:hover { color: var(--gold); }
+    .social-links a { margin-right: 1rem; font-size: 1.4rem; }
+    .copyright { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(212,175,55,0.2); font-size: 0.8rem; color: #777; }
+    .copyright a { color: var(--gold); }
+    .whatsapp-float { position: fixed; bottom: 2rem; right: 2rem; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; box-shadow: 0 5px 20px rgba(0,0,0,0.3); z-index: 99; transition: 0.2s; }
+    .whatsapp-float:hover { transform: scale(1.08); }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="images/logo.png" alt="Creative king Logo" class="logo-img">
+      <div class="logo-text">
+        <h2>CREATIVE KING</h2>
+        <p>FABRICATION</p>
+      </div>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about">About</a>
+      <a href="services">Services</a>
+      <a href="portfolio">Portfolio</a>
+      <a href="reviews" class="active">Reviews</a>
+      <a href="contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-header" data-aos="fade-up">
+  <div>
+    <h1>Client <span class="gold-text">Reviews</span></h1>
+    <p class="gold-text" style="font-size: 1.2rem;">What our clients say (and what they photographed)</p>
+  </div>
+</section>
+
+<section class="reviews-section" data-aos="fade-up">
+  <div id="reviewsGrid" class="reviews-grid">
+    <div class="loading-spinner"><i class="fas fa-spinner fa-pulse"></i> Loading reviews...</div>
+  </div>
+  <div class="review-form-container" data-aos="fade-up">
+    <h2>Leave a <span class="gold-text">Review</span></h2>
+    <form id="reviewForm">
+      <div class="form-group"><input type="text" id="reviewName" placeholder="Your full name" required></div>
+      <div class="form-group"><select id="projectType" required><option value="">Select project type</option><option>Staircase</option><option>Gate</option><option>Glass Work</option><option>Pivot Door</option><option>Multiple</option></select></div>
+      <div class="form-group"><div class="rating-stars" id="ratingStars"><i class="far fa-star" data-val="1"></i><i class="far fa-star" data-val="2"></i><i class="far fa-star" data-val="3"></i><i class="far fa-star" data-val="4"></i><i class="far fa-star" data-val="5"></i></div><input type="hidden" id="ratingValue" value="0"></div>
+      <div class="form-group"><textarea id="reviewMessage" rows="4" placeholder="What did you love? Any advice for future clients?" required></textarea></div>
+      <div class="form-group">
+        <input type="url" id="reviewImageUrl" placeholder="Image URL (optional, e.g., https://example.com/photo.jpg)">
+        <div class="help-text">Paste a direct image link from Imgur, Cloudinary, etc.</div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Review</button>
+    </form>
+    <p style="margin-top: 1rem; font-size: 0.8rem;">Your review will be published after approval – we check for authenticity. If you include a photo, we’ll send you a 5% discount on your next maintenance service.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col"><h4>Creative king</h4><p>Luxury staircase design & metal fabrication. Head office in <strong>Ikeja, Lagos</strong>.</p><div class="social-links"><a href="https://www.instagram.com/creativeking.ng"><i class="fab fa-instagram"></i></a>
+        <a href="https://web.facebook.com/people/Creative-King-Fabrication/61584915017676/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.tiktok.com/@creative_king_"><i class="fab fa-tiktok"></i></a>
+        <a href="https://x.com/creativekinghq" class="x-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M18.244 2H21.5l-7.19 8.21L22 22h-6.828l-5.35-7.007L3.5 22H.244l7.68-8.77L2 2h6.828l4.83 6.35L18.244 2zm-2.396 18h1.885L7.21 4H5.23l10.618 16z"/>
+          </svg>
+        </a></div></div>
+    <div class="footer-col"><h4>Quick Links</h4><p><a href="index.html">Home</a></p><p><a href="about">About</a></p><p><a href="services">Services</a></p><p><a href="portfolio">Portfolio</a></p><p><a href="reviews">Reviews</a></p></div>
+    <div class="footer-col"><h4>Contact</h4><p><i class="fas fa-phone"></i> +234 706 409 8755</p><p><i class="fas fa-envelope"></i> enquirycreativeking@gmail.com</p><p><i class="fas fa-map-marker-alt"></i> 20 Araromi St, off Akinremi St, Ikeja, Lagos</p></div>
+    <div class="footer-col"><h4>Office Hours</h4><p>Mon – Fri: 8am – 6pm</p><p>Sat: 10am – 3pm</p><p>Sun: Closed (emergency only)</p></div>
+  </div>
+  <div class="copyright"><p>© 2025 Creative king | Built by <a href="#" target="_blank">Kreation Digitals</a></p></div>
+</footer>
+
+<a href="https://wa.me/2347064098755?text=Hi,%20I%20saw%20your%20reviews%20page%20–%20I%20have%20a%20question." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getDatabase, ref, onValue, push, set } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+  
+  const firebaseConfig = {
+    apiKey: "AIzaSyCyoXP3b2UvK0ONcboDg6213tesUS4peVc",
+    authDomain: "creativeking-2ac01.firebaseapp.com",
+    databaseURL: "https://creativeking-2ac01-default-rtdb.firebaseio.com",
+    projectId: "creativeking-2ac01",
+    storageBucket: "creativeking-2ac01.firebasestorage.app",
+    messagingSenderId: "539027204055",
+    appId: "1:539027204055:web:81ccc51f3817f141518d92"
+  };
+  
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+  
+  function escapeHtml(str) { if (!str) return ''; return str.replace(/[&<>]/g, function(m) { if (m === '&') return '&amp;'; if (m === '<') return '&lt;'; if (m === '>') return '&gt;'; return m; }); }
+  
+  // Load approved reviews
+  const reviewsRef = ref(db, 'reviews');
+  onValue(reviewsRef, (snapshot) => {
+    const container = document.getElementById('reviewsGrid');
+    const data = snapshot.val();
+    if (!data) { container.innerHTML = '<p>No reviews yet. Be the first!</p>'; return; }
+    let html = '';
+    Object.entries(data).forEach(([key, rev]) => {
+      if (rev.approved !== true) return;
+      html += `
+        <div class="review-card">
+          <div class="review-header"><span class="review-name">${escapeHtml(rev.reviewerName)}</span><span class="review-stars">${'★'.repeat(rev.rating)}${'☆'.repeat(5-rev.rating)}</span></div>
+          <div class="review-project">${escapeHtml(rev.projectType)}</div>
+          <div class="review-message">"${escapeHtml(rev.message)}"</div>
+          ${rev.imageUrl ? `<div class="review-image"><img src="${rev.imageUrl}" loading="lazy" onerror="this.style.display='none'"></div>` : ''}
+        </div>
+      `;
+    });
+    container.innerHTML = html || '<p>No approved reviews yet.</p>';
+  });
+  
+  // Star rating
+  const stars = document.querySelectorAll('#ratingStars i');
+  const ratingInput = document.getElementById('ratingValue');
+  stars.forEach(star => star.addEventListener('click', function() { const val = parseInt(this.dataset.val); ratingInput.value = val; stars.forEach((s, idx) => { if (idx < val) s.className = 'fas fa-star'; else s.className = 'far fa-star'; }); }));
+  
+  // Submit review with image URL
+  document.getElementById('reviewForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('reviewName').value.trim();
+    const projectType = document.getElementById('projectType').value;
+    const rating = parseInt(ratingInput.value);
+    const message = document.getElementById('reviewMessage').value.trim();
+    const imageUrl = document.getElementById('reviewImageUrl').value.trim();
+    if (!name || !projectType || rating === 0 || !message) { alert("Please fill all fields and select a rating."); return; }
+    const submitBtn = e.target.querySelector('button');
+    submitBtn.disabled = true; submitBtn.textContent = "Submitting...";
+    try {
+      const newReviewRef = push(ref(db, 'reviews'));
+      await set(newReviewRef, {
+        reviewerName: name, projectType, rating, message,
+        imageUrl: imageUrl || "",
+        approved: false, timestamp: Date.now()
+      });
+      alert("Thank you! Your review will appear after admin approval.");
+      document.getElementById('reviewForm').reset();
+      ratingInput.value = 0;
+      stars.forEach(s => s.className = 'far fa-star');
+    } catch (err) { alert("Error: " + err.message); }
+    finally { submitBtn.disabled = false; submitBtn.textContent = "Submit Review"; }
+  });
+  
+  AOS.init({ duration: 800, once: true, offset: 120 });
+  
+  // ========== HAMBURGER MENU TOGGLE ==========
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  const body = document.body;
+  
+  function closeMenu() {
+    navLinks.classList.remove('show');
+    body.classList.remove('menu-open');
+    const icon = menuToggle.querySelector('i');
+    if (icon) icon.classList.remove('fa-times');
+    if (icon) icon.classList.add('fa-bars');
+  }
+  
+  function openMenu() {
+    navLinks.classList.add('show');
+    body.classList.add('menu-open');
+    const icon = menuToggle.querySelector('i');
+    if (icon) icon.classList.remove('fa-bars');
+    if (icon) icon.classList.add('fa-times');
+  }
+  
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (navLinks.classList.contains('show')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+  
+  const navLinkItems = document.querySelectorAll('.nav-links a');
+  navLinkItems.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+  
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('show') && !navLinks.contains(e.target) && e.target !== menuToggle && !menuToggle.contains(e.target)) {
+      closeMenu();
+    }
+  });
+</script>
+</body>
+</html>

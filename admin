@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Admin Dashboard | Creative Kings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0A0A0A; color: #EAEAEA; font-family: 'Inter', sans-serif; padding: 2rem; }
+    .container { max-width: 1300px; margin: 0 auto; }
+    h1, h2 { font-family: 'Cormorant Garamond', serif; color: #D4AF37; }
+    .card { background: #1A1A1A; border-radius: 24px; padding: 2rem; margin-bottom: 2rem; border: 1px solid rgba(212,175,55,0.2); }
+    input, textarea, select { width: 100%; padding: 0.8rem; margin-bottom: 1rem; background: #222; border: 1px solid #333; color: white; border-radius: 12px; }
+    button { background: #D4AF37; color: #0A0A0A; border: none; padding: 0.7rem 1.5rem; border-radius: 40px; font-weight: bold; cursor: pointer; }
+    button.danger { background: #aa2e2e; color: white; }
+    button.small { padding: 0.3rem 0.8rem; font-size: 0.8rem; }
+    .review-item, .project-item { background: #0A0A0A; padding: 1rem; margin-bottom: 1rem; border-radius: 16px; border-left: 4px solid #D4AF37; }
+    .flex-btns { display: flex; gap: 1rem; margin-top: 0.5rem; flex-wrap: wrap; }
+    .error-box, .success-box { padding: 1rem; margin-bottom: 1rem; border-radius: 8px; display: none; }
+    .error-box { background: #330000; border-left: 4px solid #ff4444; }
+    .success-box { background: #003300; border-left: 4px solid #44ff44; }
+    .help-text { font-size: 0.8rem; color: #aaa; margin-top: -0.5rem; margin-bottom: 1rem; }
+    
+    /* Navigation (same as other pages) */
+    nav {
+      background: #0A0A0A;
+      padding: 1rem 2rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid rgba(212,175,55,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-img {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+    }
+    .logo-text h2 {
+      font-size: 1.6rem;
+      color: white;
+      margin: 0;
+      line-height: 1;
+    }
+    .logo-text p {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      color: var(--gold, #D4AF37);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    .nav-links a:hover { color: #D4AF37; }
+    
+    /* Hamburger menu */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: #D4AF37;
+      cursor: pointer;
+      z-index: 101;
+    }
+    
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+        z-index: 100;
+        padding: 2rem;
+      }
+      .nav-links.show {
+        right: 0;
+      }
+      .nav-links a {
+        font-size: 1.2rem;
+      }
+      body.menu-open {
+        overflow: hidden;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="images/logo.png" alt="Creative Kings Logo" class="logo-img">
+      <div class="logo-text">
+        <h2>CREATIVE KING</h2>
+        <p>FABRICATION</p>
+      </div>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about">About</a>
+      <a href="services">Services</a>
+      <a href="portfolio">Portfolio</a>
+      <a href="reviews">Reviews</a>
+      <a href="contact">Contact</a>
+      <a href="admin" class="active">Admin</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+    <h1>Admin Dashboard</h1>
+    <div style="background: #332700; padding: 0.5rem; border-radius: 8px;"><i class="fas fa-lock-open"></i> No login – protect this page</div>
+  </div>
+  <div id="errorMsg" class="error-box"></div>
+  <div id="successMsg" class="success-box"></div>
+
+  <div class="card">
+    <h2>➕ Add New Project</h2>
+    <form id="addProjectForm">
+      <input type="text" id="projTitle" placeholder="Project Title" required>
+      <input type="text" id="projLocation" placeholder="Location (e.g., Ikeja GRA, Lagos)">
+      <textarea id="projDesc" placeholder="Description" rows="2"></textarea>
+      <input type="text" id="projMaterials" placeholder="Materials">
+      <input type="text" id="projBudget" placeholder="Budget range">
+      <input type="text" id="projTimeline" placeholder="Timeline">
+      <input type="url" id="projImageUrl" placeholder="Image URL (e.g., https://example.com/photo.jpg)">
+      <div class="help-text">Paste a direct image URL (from Imgur, Cloudinary, or your server). Leave empty for default.</div>
+      <button type="submit">Publish to Portfolio</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>📁 Existing Projects</h2>
+    <div id="projectsList">Loading...</div>
+  </div>
+
+  <div class="card">
+    <h2>⭐ All Reviews (Pending & Approved)</h2>
+    <p style="margin-bottom: 1rem;">✅ = Approved | ⏳ = Pending | You can approve pending reviews or delete any review.</p>
+    <div id="allReviewsList">Loading...</div>
+  </div>
+</div>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getDatabase, ref, set, push, onValue, update, remove } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+  
+  const firebaseConfig = {
+    apiKey: "AIzaSyCyoXP3b2UvK0ONcboDg6213tesUS4peVc",
+    authDomain: "creativeking-2ac01.firebaseapp.com",
+    databaseURL: "https://creativeking-2ac01-default-rtdb.firebaseio.com",
+    projectId: "creativeking-2ac01",
+    storageBucket: "creativeking-2ac01.firebasestorage.app",
+    messagingSenderId: "539027204055",
+    appId: "1:539027204055:web:81ccc51f3817f141518d92"
+  };
+  
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+  
+  function showError(msg) {
+    const errDiv = document.getElementById('errorMsg');
+    errDiv.innerHTML = `<i class="fas fa-exclamation-triangle"></i> ${msg}`;
+    errDiv.style.display = 'block';
+    setTimeout(() => errDiv.style.display = 'none', 5000);
+  }
+  function showSuccess(msg) {
+    const sucDiv = document.getElementById('successMsg');
+    sucDiv.innerHTML = `<i class="fas fa-check-circle"></i> ${msg}`;
+    sucDiv.style.display = 'block';
+    setTimeout(() => sucDiv.style.display = 'none', 3000);
+  }
+  
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/[&<>]/g, function(m) {
+      if (m === '&') return '&amp;';
+      if (m === '<') return '&lt;';
+      if (m === '>') return '&gt;';
+      return m;
+    });
+  }
+  
+  // ==================== PROJECTS ====================
+  function loadProjects() {
+    const projectsRef = ref(db, 'portfolio');
+    onValue(projectsRef, (snapshot) => {
+      const container = document.getElementById('projectsList');
+      const data = snapshot.val();
+      if (!data) { container.innerHTML = '<p>No projects yet.</p>'; return; }
+      let html = '';
+      Object.entries(data).forEach(([key, proj]) => {
+        html += `
+          <div class="project-item">
+            <strong>${escapeHtml(proj.title)}</strong> - ${escapeHtml(proj.location)}<br>
+            <small>Budget: ${escapeHtml(proj.budgetRange)} | Timeline: ${escapeHtml(proj.timeline)}</small>
+            <div class="flex-btns">
+              <button onclick="window.editProject('${key}', '${escapeHtml(proj.title)}', '${escapeHtml(proj.location)}', '${escapeHtml(proj.description)}', '${escapeHtml(proj.materials)}', '${escapeHtml(proj.budgetRange)}', '${escapeHtml(proj.timeline)}', '${escapeHtml(proj.imageUrl)}')">✏️ Edit</button>
+              <button class="danger" onclick="window.deleteProject('${key}')">🗑️ Delete</button>
+            </div>
+          </div>
+        `;
+      });
+      container.innerHTML = html;
+    }, (error) => showError("Failed to load projects: " + error.message));
+  }
+  
+  document.getElementById('addProjectForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const title = document.getElementById('projTitle').value;
+    const location = document.getElementById('projLocation').value;
+    const description = document.getElementById('projDesc').value;
+    const materials = document.getElementById('projMaterials').value;
+    const budgetRange = document.getElementById('projBudget').value;
+    const timeline = document.getElementById('projTimeline').value;
+    let imageUrl = document.getElementById('projImageUrl').value.trim();
+    if (!title) return showError("Title is required");
+    const submitBtn = e.target.querySelector('button');
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Publishing...";
+    try {
+      if (!imageUrl) {
+        imageUrl = 'https://images.pexels.com/photos/1457842/architecture-stairs-modern-lighting-1457842.jpeg?auto=compress&cs=tinysrgb&w=600';
+      }
+      const newProjectRef = push(ref(db, 'portfolio'));
+      await set(newProjectRef, {
+        title, location, description, materials, budgetRange, timeline,
+        imageUrl, approved: true, timestamp: Date.now()
+      });
+      showSuccess("Project added!");
+      document.getElementById('addProjectForm').reset();
+    } catch (err) { showError(`Failed: ${err.message}`); }
+    finally { submitBtn.disabled = false; submitBtn.textContent = "Publish to Portfolio"; }
+  });
+  
+  window.editProject = async (key, oldTitle, oldLocation, oldDesc, oldMaterials, oldBudget, oldTimeline, oldImageUrl) => {
+    const newTitle = prompt("Edit title:", oldTitle);
+    if (!newTitle) return;
+    const newLocation = prompt("Edit location:", oldLocation);
+    const newDesc = prompt("Edit description:", oldDesc);
+    const newMaterials = prompt("Edit materials:", oldMaterials);
+    const newBudget = prompt("Edit budget range:", oldBudget);
+    const newTimeline = prompt("Edit timeline:", oldTimeline);
+    const newImageUrl = prompt("Edit image URL (paste full URL):", oldImageUrl);
+    try {
+      const updates = {};
+      updates[`portfolio/${key}/title`] = newTitle;
+      updates[`portfolio/${key}/location`] = newLocation;
+      updates[`portfolio/${key}/description`] = newDesc;
+      updates[`portfolio/${key}/materials`] = newMaterials;
+      updates[`portfolio/${key}/budgetRange`] = newBudget;
+      updates[`portfolio/${key}/timeline`] = newTimeline;
+      if (newImageUrl) updates[`portfolio/${key}/imageUrl`] = newImageUrl;
+      await update(ref(db), updates);
+      showSuccess("Project updated");
+    } catch (err) { showError(`Update failed: ${err.message}`); }
+  };
+  
+  window.deleteProject = async (key) => {
+    if (!confirm("Delete project permanently?")) return;
+    try {
+      await remove(ref(db, `portfolio/${key}`));
+      showSuccess("Project deleted");
+    } catch (err) { showError(`Delete failed: ${err.message}`); }
+  };
+  
+  // ==================== REVIEWS (ALL with approve/delete) ====================
+  function loadAllReviews() {
+    const reviewsRef = ref(db, 'reviews');
+    onValue(reviewsRef, (snapshot) => {
+      const container = document.getElementById('allReviewsList');
+      const data = snapshot.val();
+      if (!data) { container.innerHTML = '<p>No reviews yet.</p>'; return; }
+      let html = '';
+      Object.entries(data).forEach(([key, rev]) => {
+        const isApproved = rev.approved === true;
+        const statusIcon = isApproved ? '✅' : '⏳';
+        const statusText = isApproved ? 'Approved' : 'Pending';
+        html += `
+          <div class="review-item">
+            <div><strong>${escapeHtml(rev.reviewerName)}</strong> (${rev.rating}★) - ${escapeHtml(rev.projectType)} ${statusIcon} ${statusText}</div>
+            <div><em>"${escapeHtml(rev.message)}"</em></div>
+            ${rev.imageUrl ? `<div><img src="${rev.imageUrl}" width="80" style="border-radius: 8px; margin-top: 5px;"></div>` : ''}
+            <div class="flex-btns">
+              ${!isApproved ? `<button onclick="window.approveReview('${key}')">✅ Approve</button>` : ''}
+              <button class="danger" onclick="window.deleteReview('${key}')">🗑️ Delete Review</button>
+            </div>
+          </div>
+        `;
+      });
+      container.innerHTML = html || '<p>No reviews found.</p>';
+    }, (error) => showError("Failed to load reviews: " + error.message));
+  }
+  
+  window.approveReview = async (key) => {
+    try {
+      await update(ref(db), { [`reviews/${key}/approved`]: true });
+      showSuccess("Review approved!");
+    } catch (err) { showError(`Approval failed: ${err.message}`); }
+  };
+  
+  window.deleteReview = async (key) => {
+    if (!confirm("Delete this review permanently?")) return;
+    try {
+      await remove(ref(db, `reviews/${key}`));
+      showSuccess("Review deleted");
+    } catch (err) { showError(`Delete failed: ${err.message}`); }
+  };
+  
+  // ==================== INIT ====================
+  loadProjects();
+  loadAllReviews();
+  
+  // ==================== HAMBURGER MENU ====================
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  const body = document.body;
+  
+  function closeMenu() {
+    navLinks.classList.remove('show');
+    body.classList.remove('menu-open');
+    const icon = menuToggle.querySelector('i');
+    if (icon) icon.classList.remove('fa-times');
+    if (icon) icon.classList.add('fa-bars');
+  }
+  
+  function openMenu() {
+    navLinks.classList.add('show');
+    body.classList.add('menu-open');
+    const icon = menuToggle.querySelector('i');
+    if (icon) icon.classList.remove('fa-bars');
+    if (icon) icon.classList.add('fa-times');
+  }
+  
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (navLinks.classList.contains('show')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+  
+  const navLinkItems = document.querySelectorAll('.nav-links a');
+  navLinkItems.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+  
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('show') && !navLinks.contains(e.target) && e.target !== menuToggle && !menuToggle.contains(e.target)) {
+      closeMenu();
+    }
+  });
+</script>
+</body>
+</html>

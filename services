@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Services | Creative King Fabrication – Staircase, Gates, Glass Works Ikeja Lagos</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Premium staircase design, gate fabrication, glass railings & pivot doors in Ikeja, Lagos.  3D renderings, custom metalworks, nationwide installation.">
+  <meta name="keywords" content="staircase design ikeja lagos, gate fabrication lagos, glass railing nigeria, pivot doors ikeja, metal works lagos">
+  <meta name="author" content="Creative King Fabrication">
+  <link rel="canonical" href="https://www.creativeking.ng/services">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Services – Creative King Fabrication | Ikeja Lagos">
+  <meta property="og:description" content="Explore our luxury metalwork services: floating staircases, automated gates, glass balustrades, pivot doors.  consultation.">
+  <meta property="og:image" content="https://images.pexels.com/photos/1457842/architecture-stairs-modern-lighting-1457842.jpeg">
+  <meta property="og:url" content="https://www.creativeking.ng/services">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #0A0A0A;
+      color: #EAEAEA;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    :root {
+      --gold: #D4AF37;
+      --gold-dark: #B8902C;
+      --charcoal: #1A1A1A;
+      --black: #000000;
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #1A1A1A; }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+    h1, h2, h3, .serif {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    h1 { font-size: 4rem; line-height: 1.1; }
+    h2 { font-size: 2.8rem; margin-bottom: 1rem; }
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 2rem; }
+    }
+    .gold-text { color: var(--gold); }
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s ease;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: #0A0A0A;
+    }
+    .btn-primary:hover {
+      background: var(--gold-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--gold);
+      color: white;
+    }
+    .btn-outline:hover {
+      background: rgba(212, 175, 55, 0.1);
+      transform: translateY(-3px);
+    }
+    /* Navigation */
+    nav {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1.5rem 2rem;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+    }
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-img {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+    }
+    .logo-text h2 {
+      font-size: 1.6rem;
+      color: white;
+      margin: 0;
+      line-height: 1;
+    }
+    .logo-text p {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      color: var(--gold);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    
+    /* Hamburger menu button (hidden on desktop) */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--gold);
+      cursor: pointer;
+      z-index: 101;
+    }
+    
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+        z-index: 100;
+        padding: 2rem;
+      }
+      .nav-links.show {
+        right: 0;
+      }
+      .nav-links a {
+        font-size: 1.2rem;
+      }
+      nav {
+        padding: 1rem;
+      }
+      body.menu-open {
+        overflow: hidden;
+      }
+    }
+    
+    /* Page Header */
+    .page-header {
+      height: 55vh;
+      min-height: 380px;
+      background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('https://i.pinimg.com/736x/74/0e/af/740eaf8ddb3e6dd7619e1832e0657ebf.jpg?auto=compress&cs=tinysrgb&w=1600');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    /* Services List */
+    .services-list {
+      padding: 5rem 2rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    .service-card {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 5rem;
+      background: var(--charcoal);
+      border-radius: 32px;
+      overflow: hidden;
+      border: 1px solid rgba(212,175,55,0.2);
+      transition: 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold);
+    }
+    .service-img {
+      flex: 1;
+      min-width: 280px;
+    }
+    .service-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .service-content {
+      flex: 1.5;
+      padding: 2rem 2rem 2rem 0;
+    }
+    .service-content h2 {
+      margin-bottom: 0.5rem;
+    }
+    .service-features {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+    .service-features li {
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .service-features li i {
+      color: var(--gold);
+      width: 24px;
+    }
+    .price-tag {
+      background: rgba(212,175,55,0.15);
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      margin: 1rem 0;
+      border-left: 3px solid var(--gold);
+    }
+    @media (max-width: 768px) {
+      .service-content {
+        padding: 2rem;
+      }
+      .service-card {
+        flex-direction: column;
+      }
+    }
+    /* Why Choose Us Section */
+    .why-us {
+      background: #0A0A0A;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    .why-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .why-card {
+      background: var(--charcoal);
+      padding: 2rem;
+      border-radius: 24px;
+      width: 260px;
+      transition: 0.3s;
+      border: 1px solid rgba(212,175,55,0.2);
+    }
+    .why-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+    .why-card i {
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    /* Process Overview */
+    .process-section {
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1600');
+      background-attachment: fixed;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    .process-steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .step {
+      background: rgba(26,26,26,0.9);
+      backdrop-filter: blur(4px);
+      width: 220px;
+      padding: 1.5rem;
+      border-radius: 30px;
+      border-bottom: 3px solid var(--gold);
+    }
+    /* FAQ Section */
+    .faq-section {
+      padding: 5rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: var(--charcoal);
+      margin-bottom: 1rem;
+      padding: 1.5rem;
+      border-radius: 20px;
+      border-left: 4px solid var(--gold);
+    }
+    .faq-item h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+    .faq-item h3 i {
+      margin-right: 10px;
+      color: var(--gold);
+    }
+    /* CTA Banner */
+    .cta-banner {
+      text-align: center;
+      padding: 5rem 2rem;
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1600');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: white;
+    }
+    .cta-banner h2 {
+      color: white;
+    }
+    .cta-banner .btn-outline {
+      border-color: var(--gold);
+      color: white;
+    }
+    .cta-banner .btn-outline:hover {
+      background: var(--gold);
+      color: #0A0A0A;
+    }
+    /* Footer */
+    footer {
+      background: #000;
+      padding: 3rem 2rem 1.5rem;
+      border-top: 1px solid rgba(212,175,55,0.2);
+    }
+    .footer-grid {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .footer-col h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--gold);
+    }
+    .footer-col p, .footer-col a { color: #aaa; text-decoration: none; line-height: 1.6; }
+    .footer-col a:hover { color: var(--gold); }
+    .social-links a { margin-right: 1rem; font-size: 1.4rem; }
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(212,175,55,0.2);
+      font-size: 0.8rem;
+      color: #777;
+    }
+    .copyright a { color: var(--gold); }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #25D366;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      z-index: 99;
+      transition: 0.2s;
+    }
+    .whatsapp-float:hover { transform: scale(1.08); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="images/logo.png" alt="Creative King Logo" class="logo-img">
+      <div class="logo-text">
+        <h2>CREATIVE KING</h2>
+        <p>FABRICATION</p>
+      </div>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about">About</a>
+      <a href="services" class="active">Services</a>
+      <a href="portfolio">Portfolio</a>
+      <a href="reviews">Reviews</a>
+      <a href="contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<section class="page-header" data-aos="fade-up">
+  <div>
+    <h1>Our <span class="gold-text">Services</span></h1>
+    <p class="gold-text" style="font-size: 1.2rem; margin-top: 0.5rem;">What do you need to build? Pick your starting point.</p>
+  </div>
+</section>
+
+<!-- Services List (icons replaced, no emojis) -->
+<section class="services-list">
+  <!-- Staircase Design -->
+  <div class="service-card" data-aos="fade-up">
+    <div class="service-img">
+      <img src="https://i.pinimg.com/736x/2d/16/98/2d169883301fa4dca4d98f9f9fd990e4.jpg?auto=compress&cs=tinysrgb&w=800" alt="Floating Staircase Design">
+    </div>
+    <div class="service-content">
+      <h2><i class="fas fa-stairs gold-text"></i> Staircase <span class="gold-text">Design & Fabrication</span></h2>
+      <p>A staircase that becomes the centerpiece of your entryway – floating, lit, and absolutely silent. We engineer each step to be both a structural marvel and a design icon.</p>
+      <ul class="service-features">
+        <li><i class="fas fa-check-circle"></i> Floating (cantilevered) staircases – no visible supports</li>
+        <li><i class="fas fa-check-circle"></i> Frameless glass balustrades for uninterrupted views</li>
+        <li><i class="fas fa-check-circle"></i> Integrated LED treads or under‑rail lighting (smart‑ready)</li>
+        <li><i class="fas fa-check-circle"></i> Custom stringer designs for tight spaces or helical curves</li>
+        <li><i class="fas fa-check-circle"></i> 3D rendering before fabrication – see your staircase virtually</li>
+        <li><i class="fas fa-check-circle"></i> Marine‑grade steel, powder‑coated or brushed finish</li>
+      </ul>
+      <div class="price-tag"><i class="fas fa-naira-sign"></i> From ₦1,200,000+ | <i class="far fa-clock"></i> 2–4 weeks | <i class="fas fa-chalkboard-user"></i> consultation & 3D render</div>
+      <a href="contact" class="btn btn-outline">Request a quote →</a>
+    </div>
+  </div>
+
+  <!-- Gate Fabrication -->
+  <div class="service-card" data-aos="fade-up">
+    <div class="service-img">
+      <img src="https://i.pinimg.com/1200x/de/f0/cf/def0cf523c74cb2ec30ab75f1ceab51a.jpg?auto=compress&cs=tinysrgb&w=800" alt="Modern Gate Fabrication">
+    </div>
+    <div class="service-content">
+      <h2><i class="fas fa-archway gold-text"></i> Gate <span class="gold-text">Fabrication & Installation</span></h2>
+      <p>Security that doesn’t scream “prison.” Your gate becomes the first impression of your home – elegant, durable, and perfectly automated.</p>
+      <ul class="service-features">
+        <li><i class="fas fa-check-circle"></i> Swing gates (manual or automated with remote/app control)</li>
+        <li><i class="fas fa-check-circle"></i> Slide gates for narrow driveways – space‑saving design</li>
+        <li><i class="fas fa-check-circle"></i> Laser‑cut decorative panels (your pattern or our curated library)</li>
+        <li><i class="fas fa-check-circle"></i> Heavy‑duty hinges + 1 year maintenance check</li>
+        <li><i class="fas fa-check-circle"></i> Powder‑coated, rust‑resistant finishes – survive Lagos weather</li>
+        <li><i class="fas fa-check-circle"></i> Integration with intercom & CCTV systems</li>
+      </ul>
+      <div class="price-tag"><i class="fas fa-naira-sign"></i> ₦450,000 – ₦3,500,000 | <i class="far fa-clock"></i> 2–3 weeks | <i class="fas fa-ruler"></i> on‑site measurement</div>
+      <a href="contact" class="btn btn-outline">Request a quote →</a>
+    </div>
+  </div>
+
+  <!-- Glass & Metal Works -->
+  <div class="service-card" data-aos="fade-up">
+    <div class="service-img">
+      <img src="https://i.pinimg.com/736x/49/51/6c/49516cbeb2c23fdd33ba426f06fd3f62.jpg?auto=compress&cs=tinysrgb&w=800" alt="Glass Railing Balcony">
+    </div>
+    <div class="service-content">
+      <h2><i class="fas fa-clone gold-text"></i> Premium Glass & <span class="gold-text">Metal Works</span></h2>
+      <p>Open sightlines, no bulky frames. Perfect for balconies, offices, pool areas, and staircases. Our glass systems are virtually invisible yet incredibly strong.</p>
+      <ul class="service-features">
+        <li><i class="fas fa-check-circle"></i> Glass railings (stainless steel spigots or hidden channel system)</li>
+        <li><i class="fas fa-check-circle"></i> Office partitions – floor‑to‑ceiling, minimal framing, sound‑reducing</li>
+        <li><i class="fas fa-check-circle"></i> Balcony systems (tempered glass 10mm+, up to 2.4m spans)</li>
+        <li><i class="fas fa-check-circle"></i> Structural silicone & zero wobble guarantee – no rattling</li>
+        <li><i class="fas fa-check-circle"></i> Stainless steel hardware (304 grade, no corrosion)</li>
+        <li><i class="fas fa-check-circle"></i> Frosted, tinted, or clear glass options</li>
+      </ul>
+      <div class="price-tag"><i class="fas fa-naira-sign"></i> From ₦300,000+ | <i class="far fa-clock"></i> 1–3 weeks | <i class="fas fa-shield-alt"></i> Tempered, safety‑certified glass</div>
+      <a href="contact" class="btn btn-outline">Request a quote →</a>
+    </div>
+  </div>
+
+  <!-- Pivot Doors -->
+  <div class="service-card" data-aos="fade-up">
+    <div class="service-img">
+      <img src="https://i.pinimg.com/736x/bc/d2/62/bcd262032d21ac01ad211edf780a42e7.jpg?auto=compress&cs=tinysrgb&w=800" alt="Luxury Pivot Door">
+    </div>
+    <div class="service-content">
+      <h2><i class="fas fa-door-open gold-text"></i> Wooden Pivot <span class="gold-text">Doors</span></h2>
+      <p>Your front door becomes a 2.5‑meter tall work of art. Opens like a dream, seals like a vault. No sagging, no squeaking – just pure elegance.</p>
+      <ul class="service-features">
+        <li><i class="fas fa-check-circle"></i> 50mm thick solid core door leaf (wood, metal, or composite)</li>
+        <li><i class="fas fa-check-circle"></i> Continuous pivot hinge system – rated for 200kg+</li>
+        <li><i class="fas fa-check-circle"></i> Custom laser‑cut patterns or solid panels, any RAL color</li>
+        <li><i class="fas fa-check-circle"></i> Weather‑sealed & security‑rated (multi‑point locking)</li>
+        <li><i class="fas fa-check-circle"></i> Available with smart lock integration</li>
+        <li><i class="fas fa-check-circle"></i> 5‑year warranty on hinges and frame</li>
+      </ul>
+      <div class="price-tag"><i class="fas fa-naira-sign"></i> From ₦1,000,000+ (includes door leaf, frame, pivot hinge set) | <i class="far fa-clock"></i> 3–5 weeks</div>
+      <a href="contact" class="btn btn-outline">Request a quote →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="why-us" data-aos="fade-up">
+  <h2>Why <span class="gold-text">Choose Us</span>  <span class="gold-text"></span></h2>
+  <div class="why-grid">
+    <div class="why-card"><i class="fas fa-ruler-combined"></i><h3>Precision Engineering</h3><p>Every weld, every angle, every glass cut is laser‑measured and inspected.</p></div>
+    <div class="why-card"><i class="fas fa-clock"></i><h3>On‑Time Delivery</h3><p>We commit to deadlines. Weekly photo updates keep you informed.</p></div>
+    <div class="why-card"><i class="fas fa-shield-alt"></i><h3>Structural Warranty</h3><p>All staircases and gates come with a 3‑year structural guarantee.</p></div>
+    <div class="why-card"><i class="fas fa-drafting-compass"></i><h3>In‑House Design</h3><p>No middlemen. You speak directly to the team that builds.</p></div>
+  </div>
+</section>
+
+<!-- Process Overview -->
+<section class="process-section" data-aos="fade-up">
+  <h2>How it <span class="gold-text">works</span> – from your <span class="gold-text">Innovation</span> to installation</h2>
+  <div class="process-steps">
+    <div class="step"><i class="fas fa-headset"></i> 1. Consult (1h / on‑site or video)</div>
+    <div class="step"><i class="fas fa-drafting-compass"></i> 2. Design & Approve (3D renderings)</div>
+    <div class="step"><i class="fas fa-hammer"></i> 3. Fabricate (Lagos workshop – you can visit)</div>
+    <div class="step"><i class="fas fa-truck"></i> 4. Install (clean, same‑day, dust‑controlled)</div>
+  </div>
+  <p style="margin-top: 2rem;">“We send weekly photo updates. No guessing.”</p>
+</section>
+
+<!-- FAQ Section – with icons -->
+<section class="faq-section" data-aos="fade-up">
+  <h2 style="text-align: center;">Frequently Asked <span class="gold-text">Questions</span></h2>
+  <div class="faq-item">
+    <h3><i class="fas fa-question-circle"></i> Do you offer consultations?</h3>
+    <p>Yes, we provide a 1‑hour on‑site or video consultation. We’ll discuss your vision, take measurements, and give a rough estimate.</p>
+  </div>
+  <div class="faq-item">
+    <h3><i class="fas fa-cube"></i> Can I see a 3D rendering before fabrication?</h3>
+    <p>Absolutely. Every staircase and gate project includes a 3D rendering so you can see exactly how it will look in your space.</p>
+  </div>
+  <div class="faq-item">
+    <h3><i class="fas fa-map-marker-alt"></i> Do you work outside Lagos?</h3>
+    <p>Yes, we serve nationwide. For projects outside Lagos, we arrange site visits and can ship fabricated parts for local installation by our team.</p>
+  </div>
+  <div class="faq-item">
+    <h3><i class="fas fa-hard-hat"></i> What materials do you use?</h3>
+    <p>Marine‑grade mild steel, stainless steel (304), tempered glass (10mm–15mm), and high‑density wood cores for pivot doors.</p>
+  </div>
+  <div class="faq-item">
+    <h3><i class="fas fa-stopwatch"></i> How long does a typical staircase take?</h3>
+    <p>From design to installation, 2–4 weeks depending on complexity. Gates take 2–3 weeks.</p>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner" data-aos="fade-up">
+  <h2>Have a project in mind? <span style="color: var(--gold);">Let’s build yours.</span></h2>
+  <p style="margin-bottom: 1.5rem; font-size: 1.2rem;">Send a photo of your space for a rough estimate – we reply within 24h.</p>
+  <a href="https://wa.me/2347064098755?text=Hi%2C%20I%20saw%20your%20services%20page%20–%20I%27m%20interested%20in%20a%20project." class="btn btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+  <a href="contact" class="btn btn-primary" style="margin-left: 1rem;">Request a Quote</a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Creative King Fabrication</h4>
+      <p>Luxury staircase design & metal fabrication. Transforming homes across Lagos and Nigeria. Head office in <strong>Ikeja, Lagos</strong>.</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/creativekings.ng"><i class="fab fa-instagram"></i></a>
+        <a href="https://web.facebook.com/people/Creative-King-Fabrication/61584915017676/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.tiktok.com/@creative_king_"><i class="fab fa-tiktok"></i></a>
+        <a href="https://x.com/creativekinghq" class="x-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M18.244 2H21.5l-7.19 8.21L22 22h-6.828l-5.35-7.007L3.5 22H.244l7.68-8.77L2 2h6.828l4.83 6.35L18.244 2zm-2.396 18h1.885L7.21 4H5.23l10.618 16z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <p><a href="index.html">Home</a></p>
+      <p><a href="about">About</a></p>
+      <p><a href="services">Services</a></p>
+      <p><a href="portfolio">Portfolio</a></p>
+      <p><a href="reviews">Reviews</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p><i class="fas fa-phone"></i> +234 706 409 8755</p>
+      <p><i class="fas fa-envelope"></i> enquirycreativeking@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> 20 Araromi St, off Akinremi St, Ikeja, Lagos</p>
+    </div>
+    <div class="footer-col">
+      <h4>Office Hours</h4>
+      <p>Mon – Fri: 8am – 6pm</p>
+      <p>Sat: 10am – 3pm</p>
+      <p>Sun: Closed (emergency only)</p>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>© 2025 Creative King Fabrication | Built by <a href="#" target="_blank">Kreation Digitals</a></p>
+  </div>
+</footer>
+
+<a href="https://wa.me/2347064098755?text=Hi%2C%20I%20saw%20your%20services%20page%20–%20I%27m%20interested%20in%20a%20project." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true, offset: 120 });
+  
+  // ========== HAMBURGER MENU TOGGLE ==========
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  const body = document.body;
+  
+  function closeMenu() {
+    navLinks.classList.remove('show');
+    body.classList.remove('menu-open');
+    const icon = menuToggle.querySelector('i');
+    if (icon) icon.classList.remove('fa-times');
+    if (icon) icon.classList.add('fa-bars');
+  }
+  
+  function openMenu() {
+    navLinks.classList.add('show');
+    body.classList.add('menu-open');
+    const icon = menuToggle.querySelector('i');
+    if (icon) icon.classList.remove('fa-bars');
+    if (icon) icon.classList.add('fa-times');
+  }
+  
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (navLinks.classList.contains('show')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+  
+  const navLinkItems = document.querySelectorAll('.nav-links a');
+  navLinkItems.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+  
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('show') && !navLinks.contains(e.target) && e.target !== menuToggle && !menuToggle.contains(e.target)) {
+      closeMenu();
+    }
+  });
+</script>
+</body>
+</html>
